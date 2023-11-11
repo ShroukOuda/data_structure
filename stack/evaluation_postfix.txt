@@ -1,0 +1,10 @@
+step1: scan postfix exp from left to right
+step2: for each symbol in postfix exp
+       1) if operand is these, push it on to stack
+       2) else if operator is these, pop two element
+           -> op1 = top element
+           -> op2 = next top element
+           result = op2 operator op1
+           then push the result on to stack 
+        repeat until end postfix exp
+step3: return (stack[top])

@@ -1,0 +1,10 @@
+step1: scan prefix exp from right to left
+step2: for each symbol in prefix exp
+       1) if operand is these, push it on to stack
+       2) else if operator is these, pop two element
+           -> op1 = top element
+           -> op2 = next top element
+           result = op1 operator op2
+           then push the result on to stack 
+        repeat until end prefix exp
+step3: return (stack[top])

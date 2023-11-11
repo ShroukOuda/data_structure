@@ -1,0 +1,12 @@
+step1: scan infix exp from right to left
+step2: for each symbol in infix exp
+       1) create prefix string
+       2) if operand is these, add it to the prefix
+       3) else if closing parenthesies ')', push it on to the stack
+       4) else if opening parenthesies '(', add top on the stack to the postfix then pop it, and repeat until close paranthesis
+                 is found and then pop the close paranthesis.
+       5) else if operator is these, check precedence of this operator
+            * if operator has higher precedence than the top of stack, push it on the stack
+            * if operator has lower precedence than the top of stack, add top to the prefix and then pop it
+                  and repeat until the top has lower precedence than the operator
+step3: at end of the infix exp add all operators from stack to postfix then pop them. 

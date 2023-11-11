@@ -1,0 +1,14 @@
+step1: scan infix exp from left to right.
+step2: for each symbol in infix exp
+       1) create postfix string
+       2) if operand is these , add it to the postfix
+       3) else if open paranthesis '(', push it on to stack
+       4) else if closing paranthesis ')', add top of stack to the postfix then pop it and repeat until open paranthesis is found
+                then pop the open paranthesis.
+       5) else if operator is these ,check precedence of this operator
+              * if operator has higher precedence than the top of the stack, push it on the stack
+              * if operator has lower precedence than the top of the stack, add top to the postfix then pop it and repeat until the                       top has lower precedence than the operator
+              * if operator has equal precedence with the top of the stack, use associativity rule.
+                  -> L to R add top to the postfix and then pop it, then push operator on the stack
+                  -> R to L push operator on the stack
+step3: at the end of the infix exp, add all operators on the postfix and pop from stack. 

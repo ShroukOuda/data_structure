@@ -1,0 +1,12 @@
+step1: scan postfix exp from left to right
+step2: for each sympol in postfix exp
+        1) if operand is these, push it on to stack
+        2)else if operator is these, pop two operands from stack.
+            -> op1 = top element
+            -> op2 = next top element
+           create a string by concatenating th two operands and the operator between them.
+           string = "(" + op2 + operator + op1 + ")"
+           and then push string on to the stack.
+        repeat the above steps until the end of the postfix exp.
+step3: at the end stack will have only one string 
+         return (stack[top])
