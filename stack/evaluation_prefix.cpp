@@ -45,7 +45,7 @@ int prefix_exp(string prefix)
 int main()
 {
     string prefix;
-    cout<<"Enter postfix exp: ";
+    cout<<"Enter prefix exp: ";
     cin>>prefix;
     cout<<"Evaluation is: "<<prefix_exp(prefix)<<endl;
 }
