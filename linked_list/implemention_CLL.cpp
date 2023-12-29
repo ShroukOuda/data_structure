@@ -69,9 +69,12 @@ class clsCll
 	{
 		insert_beg(newnode->data);
 	}
+    else
+    {
         tail->next = newnode;
         tail = newnode;
         tail->next = head;
+    }
     }
     void insert_at_pos(int pos, int x)
     {
@@ -101,9 +104,19 @@ class clsCll
     void delete_beg()
     {
         node *temp = head;
+        if (head == 0)
+        cout<<"List is empty\n";
+        else if (head->next == head)
+        {
+            head = tail = 0;
+            free(temp);
+        }
+        else
+        {
         head = temp->next;
         tail->next = head;
-        free(head);
+        free(temp);
+        }
     }
     void delete_end()
     {
