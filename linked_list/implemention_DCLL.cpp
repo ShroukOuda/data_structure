@@ -138,7 +138,7 @@ class clsDcll
         {
         cout<<"list is empty\n";
         }
-        else if (head->next = head)
+        else if (head == tail)
         {
             head = tail = 0;
             free(temp);
@@ -159,7 +159,7 @@ class clsDcll
         {
         cout<<"list is empty\n";
         }
-        else if (head->next = head)
+        else if (head == tail)
         {
             head = tail = 0;
             free(temp);
@@ -234,8 +234,8 @@ int main()
     list.insert_at_pos(2,7);
     list.display();
     cout<<list.length()<<endl;
-    //list.reverse();
-   // list.display();
+    list.reverse();
+    list.display();
     list.delete_beg();
     list.delete_end();
     list.delete_at_pos(2);
