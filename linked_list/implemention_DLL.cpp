@@ -32,6 +32,10 @@ class clsDll
     {
         node *temp;
         temp = head;
+        if (head == 0)
+        cout<<"List is empty\n";
+        else
+        {
         cout<<"list is:\n";
         while (temp != 0)
         {
@@ -39,6 +43,7 @@ class clsDll
             temp = temp->next;
         }
         cout<<endl;
+        }
     }
     int length()
     {

@@ -77,24 +77,36 @@ class clsLinkedList
     {
         node *temp;
         temp = head;
-        head = temp->next;
-        free(temp);
-    }
-    void delete_end()
-    {
-        node *temp;
-        temp = head;
-        while (temp->next != tail)
-        {
-            temp = temp->next;
-        }
-        if (temp == head)
+        if (head == 0)
+        cout<<"List is empty\n";
+        else if (head == tail)
         {
             head = tail = 0;
             free(temp);
         }
         else
         {
+        head = temp->next;
+        free(temp);
+        }
+    }
+    void delete_end()
+    {
+        node *temp;
+        temp = head;
+        if (head == 0)
+        cout<<"List is empty\n";
+        else if (head == tail)
+        {
+            head = tail = 0;
+            free(temp);
+        }
+        else
+        {
+        while (temp->next != tail)
+        {
+            temp = temp->next;
+        }
         tail = temp;
         temp = temp->next;
         free(temp);
@@ -108,6 +120,10 @@ class clsLinkedList
         temp = head;
         if (pos == 1)
         delete_beg();
+        else if (pos < 1 || pos > length())
+        cout<<"InVaild position\n";
+        else
+        {
         while (i < pos - 1)
         {
             temp = temp->next;
@@ -116,6 +132,7 @@ class clsLinkedList
         nextnode = temp->next;
         temp->next = nextnode->next;
         free(nextnode);
+        }
     }
     void reverse()
     {
@@ -136,10 +153,17 @@ class clsLinkedList
     {
         node *temp;
         temp = head;
+        if (head == 0)
+        cout<<"List is empty\n";
+        else
+        {
+        cout<<"list is: \n";
         while (temp != 0)
         {
-            cout<<temp->data<<endl;
+            cout<<temp->data<<" ";
             temp = temp->next;
+        }
+        cout<<endl;
         }
     }
 };

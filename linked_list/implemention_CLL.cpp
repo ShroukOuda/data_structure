@@ -29,6 +29,10 @@ class clsCll
     {
         node *temp;
         temp = head;
+        if (head == 0)
+        cout<<"List is empty\n";
+        else
+        {
         cout<<"list is:\n";
         while (temp->next != head)
         {
@@ -36,6 +40,7 @@ class clsCll
             temp = temp->next;
         }
         cout<<temp->data<<endl;
+        }
     }
     int length()
     {
